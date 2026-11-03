@@ -1,7 +1,3 @@
----
-aliases:
-  - Telegram integration
----
 # Telegram integration
 
 Pix interacts with Telegram through the HTTP Bot API, not MTProto. Deterministic code handles all incoming updates and outgoing API calls, rather than giving the agent direct access to the API.
@@ -14,7 +10,7 @@ This allows Pix to:
 
 ## Message representation
 
-Messages presented to the agent combine YAML frontmatter for metadata with a [[telegram-flavored-markdown|Telegram-flavored Markdown]] body:
+Messages presented to the agent combine YAML frontmatter for metadata with a [[telegram-flavored-markdown]] body:
 
 ```md
 ---

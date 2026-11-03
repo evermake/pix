@@ -1,0 +1,12 @@
+{
+  "globs": ["**/*.md"],
+  "gitignore": true,
+  "ignores": ["**/node_modules/**", ".git/**", ".delta/**"],
+  "customRules": ["./tools/markdownlint/no-soft-wrap.mjs"],
+  "config": {
+    "default": true,
+    "MD041": true,
+    "MD013": false,
+    "MD059": false
+  },
+}
