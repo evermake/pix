@@ -1,1 +1,3 @@
+# Telegram file URLs
+
 `tg-file://<id>` URLs reference files stored on Telegram servers and known to the bot. `<id>` is a unique, case-sensitive, 8-character identifier (`a-z`, `A-Z`, `0-9`) that maps to stored Bot API metadata (`file_id`, `file_unique_id`, etc.).

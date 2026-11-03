@@ -1,0 +1,18 @@
+{
+  "name": "pix",
+  "private": true,
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "markdownlint-cli2",
+    "lint:fix": "markdownlint-cli2 --fix",
+    "test": "node --test tools/markdownlint/*.test.mjs"
+  },
+  "devDependencies": {
+    "markdown-it": "15.0.3",
+    "markdownlint": "0.42.0",
+    "markdownlint-cli2": "0.24.0"
+  }
+}
