@@ -1,7 +1,14 @@
 {
-  "globs": ["**/*.md"],
+  "globs": ["**/*.md", "!**/CHANGELOG.md"],
   "gitignore": true,
   "customRules": ["./tools/markdownlint/no-soft-wrap.mjs"],
+  "overrides": [
+    {
+      "filter": [".changeset/*.md", "!.changeset/README.md"],
+      "config": { "MD041": false },
+      "combine": "merge"
+    }
+  ],
   "config": {
     "default": true,
     "MD041": true,

@@ -1,20 +1,31 @@
 {
   "name": "pix",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@12.16.1",
   "engines": {
     "node": ">=24.11.1"
   },
   "scripts": {
+    "changeset": "changeset",
+    "changeset:check": "node scripts/release.ts check",
+    "release": "node scripts/release.ts",
+    "release:verify": "node scripts/release.ts verify",
+    "deploy": "pnpm -r --if-present run deploy",
     "lint": "markdownlint-cli2",
     "lint:fix": "markdownlint-cli2 --fix",
     "test": "pnpm run test:tools && pnpm -r test",
     "test:tools": "node --test tools/markdownlint/*.test.mjs",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "tsc --project scripts/tsconfig.json && pnpm -r typecheck"
   },
   "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "@effect/platform-node": "catalog:",
+    "@types/node": "catalog:",
+    "effect": "catalog:",
     "markdown-it": "catalog:",
     "markdownlint": "catalog:",
-    "markdownlint-cli2": "catalog:"
+    "markdownlint-cli2": "catalog:",
+    "typescript": "catalog:"
   }
 }
