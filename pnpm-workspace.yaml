@@ -5,6 +5,7 @@ catalog:
   '@changesets/cli': 3.0.3
   '@alchemy.run/cloudflare': 2.0.0-beta.85
   '@effect/platform-node': 4.1.2
+  '@types/node': 24.19.2
   alchemy: 2.0.0-beta.85
   effect: 4.1.2
   markdown-it: 15.0.3
