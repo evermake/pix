@@ -1,3 +1,23 @@
+/**
+ * Shared-version releases, with a version PR before a production tag push.
+ *
+ * Every PR needs a new changeset (`pnpm changeset`, or `--empty` for non-release
+ * changes). From clean, up-to-date main, `pnpm release --dry-run` previews the
+ * next action. `pnpm release` opens a version PR when bumps are pending; after
+ * merging it and updating local main, run the command again to push the tag.
+ * The tag triggers the Release workflow and Alchemy production deployment.
+ *
+ * Requires authenticated gh, Git signing access, and Actions secrets
+ * CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN with the permissions described at
+ * https://alchemy.run/environments/ci#cloudflare. `--yes` skips confirmation.
+ * The check and verify subcommands provide PR and release-tag validation for CI.
+ *
+ * Failures preserve local work: inspect branches, changes, and tags before
+ * retrying. Rerun the failed Release job for deployment failures; never move a
+ * published tag. Maintainer checklist: ../docs/releases.md.
+ *
+ * @module
+ */
 import { NodeRuntime, NodeServices } from "@effect/platform-node";
 import { Config, Console, Effect, FileSystem, Option, Path, Schema, Stream } from "effect";
 import { Argument, Command, Flag, Prompt } from "effect/cli";
