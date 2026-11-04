@@ -13,8 +13,8 @@
     "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
-    "markdown-it": "15.0.3",
-    "markdownlint": "0.42.0",
-    "markdownlint-cli2": "0.24.0"
+    "markdown-it": "catalog:",
+    "markdownlint": "catalog:",
+    "markdownlint-cli2": "catalog:"
   }
 }

@@ -7,33 +7,7 @@ Pix is a personal-agent platform exploring a move from a standalone Linux VM to 
 - Compose tools through Codemode, with isolated execution and scoped credentials.
 - Keep the harness versioned, reviewable, and easy to extend.
 
-The Cloudflare architecture and migration approach are still being explored. The first implementation is a minimal Worker in `@pix/cloud`.
-
-## Development
-
-Requires Node.js 24.11.1+ and pnpm 12.16.1 (pinned in `package.json`).
-
-```sh
-pnpm install
-pnpm test
-pnpm typecheck
-pnpm lint
-```
-
-This is a pnpm workspace with packages under `packages/*`. Root tests run the existing Markdown tooling tests and each package's tests.
-
-### Cloud Worker
-
-`packages/cloud` (`@pix/cloud`) contains an Effect v4 HTTP handler, an Alchemy v2 Worker declaration, and its `alchemy.run.ts` stack. Alchemy is pinned to a beta release compatible with Effect v4.
-
-```sh
-pnpm --filter @pix/cloud test
-pnpm --filter @pix/cloud typecheck
-```
-
-The smoke test sends one `GET /` request through Effect's Web Request/Response adapter and checks the status, content type, and `Hello from Pix!` body. It uses the same handler as the Worker, runs in Node via Vitest, and needs no Cloudflare credentials, network listener, or deployed resources. It does not test the Cloudflare runtime or provisioning.
-
-The stack is declared for future deployment only. No deployment or `alchemy dev` is part of setup or testing; Alchemy's dev command can provision cloud resources.
+Currently in high-level planning; the Cloudflare architecture and migration approach are not yet finalized.
 
 ## Capabilities vs. tools
 
