@@ -6,13 +6,19 @@
     "node": ">=24.11.1"
   },
   "scripts": {
+    "changeset": "changeset",
+    "changeset:check": "node tools/release/check-changeset.mjs",
+    "release": "node tools/release/release.mjs",
+    "release:verify": "node tools/release/verify-tag.mjs",
+    "deploy": "pnpm -r --if-present run deploy",
     "lint": "markdownlint-cli2",
     "lint:fix": "markdownlint-cli2 --fix",
     "test": "pnpm run test:tools && pnpm -r test",
-    "test:tools": "node --test tools/markdownlint/*.test.mjs",
+    "test:tools": "node --test tools/markdownlint/*.test.mjs tools/release/*.test.mjs",
     "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
+    "@changesets/cli": "catalog:",
     "markdown-it": "catalog:",
     "markdownlint": "catalog:",
     "markdownlint-cli2": "catalog:"

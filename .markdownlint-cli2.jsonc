@@ -1,5 +1,5 @@
 {
-  "globs": ["**/*.md"],
+  "globs": ["**/*.md", "!**/CHANGELOG.md"],
   "gitignore": true,
   "customRules": ["./tools/markdownlint/no-soft-wrap.mjs"],
   "config": {
