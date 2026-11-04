@@ -3,12 +3,14 @@
   "private": true,
   "packageManager": "pnpm@12.16.1",
   "engines": {
-    "node": ">=22"
+    "node": ">=24.11.1"
   },
   "scripts": {
     "lint": "markdownlint-cli2",
     "lint:fix": "markdownlint-cli2 --fix",
-    "test": "node --test tools/markdownlint/*.test.mjs"
+    "test": "pnpm run test:tools && pnpm -r test",
+    "test:tools": "node --test tools/markdownlint/*.test.mjs",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "markdown-it": "15.0.3",

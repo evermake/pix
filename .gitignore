@@ -1,3 +1,5 @@
 .obsidian/
 .delta/
 node_modules/
+.alchemy/
+.vitest/
