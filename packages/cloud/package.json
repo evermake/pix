@@ -4,11 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev:worker": "alchemy dev",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@alchemy.run/cloudflare": "catalog:",
+    "@effect/platform-node": "catalog:",
     "alchemy": "catalog:",
     "effect": "catalog:"
   },
